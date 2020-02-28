@@ -1,0 +1,29 @@
+
+When the taxi interface is implemented in both simple taxi and smart taxi, its defined methods have to be overridden
+in the respective two classes.
+The taxi interface, in a way, is like a contract that implies including the existing methods but giving the freedom
+on how it could be implemented. This is useful, because in our case, we know that both  a simple and smart taxis are
+ supposed to implement addRequest and isOccupied methods.
+
+A more useful strategy would be to use the design patterns. The factory pattern, for instance, would provide more
+flexibility by writing a more abstract code, in the case where other types of smart mobility transportations
+systems need to be created and added such as connected cars, drones or autonomous vehicles.
+
+On the other side, a strategy pattern could also be useful since different transportation systems may behave in a
+different way, which is the case with smart and simple taxis. Hence, duplicated parameters can be avoided.
+
+For example, processRequest(String origin, String destination) could be more abstracted by the strategy pattern.
+
+
+Simple Taxi strategy output
+the taxi id 4 at each request order had the following steps: [14, 7, 8, 24, 24, 24]  the total is 101
+the taxi id 3 at each request order had the following steps: [16, 51, 8, 24, 24, 24]  the total is 147
+the taxi id 2 at each request order had the following steps: [7, 24, 8, 16, 24, 8, 16, 8, 24, 16]  the total is 151
+the taxi id 1 at each request order had the following steps: [24, 24, 24, 8, 8, 8, 24, 8, 16]  the total is 144
+
+
+Smart Taxi strategy output
+the taxi id 3 at each request order had the following steps: [8, 8, 7, 8, 9, 9]  the total is 49
+the taxi id 4 at each request order had the following steps: [7, 7, 8, 7, 7, 7]  the total is 43
+the taxi id 1 at each request order had the following steps: [7, 8, 8, 7, 7, 8, 7, 8, 8]  the total is 68
+the taxi id 2 at each request order had the following steps: [7, 7, 8, 9, 7, 7, 8, 7, 8, 8]  the total is 76
